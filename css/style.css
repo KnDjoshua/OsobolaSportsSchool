@@ -46,15 +46,15 @@ textarea {
 
 @keyframes radiate {
     0% {
-        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        box-shadow: 0 0 20px rgba(243, 99, 99, 0.5);
     }
 
     50% {
-        box-shadow: 0 0 20px rgba(0, 123, 255, 0.7);
+        box-shadow: 0 0 40px rgba(0, 255, 55, 0.7);
     }
 
     100% {
-        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        box-shadow: 0 0 20px rgba(217, 27, 135, 0.5);
     }
 }
 
