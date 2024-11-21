@@ -29,13 +29,13 @@ body {
 
 textarea {
     width: 250px;
-    height: 100px;
+    height: 90px;
     padding: 10px;
     border: none;
     outline: none;
     border-radius: 10px;
     font-size: 16px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     background: white;
     position: relative;
     animation: radiate 3s infinite;
@@ -83,7 +83,7 @@ button:hover {
 
 .conversation {
     margin: 20px;
-    width: 90%;
+    width: 100%;
 }
 
 .message {
