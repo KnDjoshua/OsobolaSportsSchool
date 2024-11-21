@@ -1021,7 +1021,7 @@
 
     <div class="text-box-container">
         <textarea id="messageBox" placeholder="Type your message..."></textarea>
-        <button id="sendButton">Send</button>
+        <button id="toggleButton">Write a message</button>
     </div>
     <div class="conversation">
         <!-- Conversation messages will appear here -->
@@ -1029,30 +1029,35 @@
 
 
     <script>
-        const sendButton = document.getElementById('sendButton');
+        const toggleButton = document.getElementById('toggleButton');
         const messageBox = document.getElementById('messageBox');
         const conversation = document.querySelector('.conversation');
-        const whatsappNumber = "256760447637"; // Replace with the actual number.
+        let isMinimized = true;
 
-        sendButton.addEventListener('click', () => {
-            const message = messageBox.value.trim();
-            if (message === "") {
-                alert("Please type a message!");
-                return;
+        toggleButton.addEventListener('click', () => {
+            if (isMinimized) {
+                // Expand the text box
+                messageBox.classList.remove('hidden');
+                toggleButton.textContent = "Send";
+                messageBox.focus();
+            } else {
+                // If the text box is not empty, send the message
+                const message = messageBox.value.trim();
+                if (message !== "") {
+                    const messageBubble = document.createElement('div');
+                    messageBubble.classList.add('message');
+                    messageBubble.textContent = message;
+                    conversation.appendChild(messageBubble);
+
+                    // Clear the message box
+                    messageBox.value = "";
+                }
+
+                // Collapse the text box
+                messageBox.classList.add('hidden');
+                toggleButton.textContent = "Write a message";
             }
-
-            // Add message to the conversation display
-            const messageBubble = document.createElement('div');
-            messageBubble.classList.add('message');
-            messageBubble.textContent = message;
-            conversation.appendChild(messageBubble);
-
-            // Clear the message box
-            messageBox.value = "";
-
-            // Send message to WhatsApp
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappURL, '_blank');
+            isMinimized = !isMinimized; // Toggle the state
         });
     </script>
 
