@@ -1017,6 +1017,50 @@
     </div> -->
     <!-- Testimonial End -->
 
+
+
+    <div class="text-box-container">
+        <textarea id="messageBox" placeholder="Type your message..."></textarea>
+        <button id="sendButton">Send</button>
+    </div>
+    <div class="conversation">
+        <!-- Conversation messages will appear here -->
+    </div>
+
+
+    <script>
+        const sendButton = document.getElementById('sendButton');
+        const messageBox = document.getElementById('messageBox');
+        const conversation = document.querySelector('.conversation');
+        const whatsappNumber = "256760447637"; // Replace with the actual number.
+
+        sendButton.addEventListener('click', () => {
+            const message = messageBox.value.trim();
+            if (message === "") {
+                alert("Please type a message!");
+                return;
+            }
+
+            // Add message to the conversation display
+            const messageBubble = document.createElement('div');
+            messageBubble.classList.add('message');
+            messageBubble.textContent = message;
+            conversation.appendChild(messageBubble);
+
+            // Clear the message box
+            messageBox.value = "";
+
+            // Send message to WhatsApp
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+
+
+
+
+
+
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
         <div class="container py-5 border-start-0 border-end-0"
