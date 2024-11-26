@@ -1036,23 +1036,23 @@
 
         sendButton.addEventListener('click', () => t {
             const message = messageBox.value.trim();
-            if (message === "") {
-                alert("Please type a message!");
-                return;
-            }
+            if(message === "") {
+            alert("Please type a message!");
+            return;
+        }
 
-            // Add message to the conversation display
-            const messageBubble = document.createElement('div');
-            messageBubble.classList.add('message');
-            messageBubble.textContent = message;
-            conversation.appendChild(messageBubble);
+        // Add message to the conversation display
+        const messageBubble = document.createElement('div');
+        messageBubble.classList.add('message');
+        messageBubble.textContent = message;
+        conversation.appendChild(messageBubble);
 
-            // Clear the message box
-            messageBox.value = "";
+        // Clear the message box
+        messageBox.value = "";
 
-            // Send message to WhatsApp
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappURL, '_blank');
+        // Send message to WhatsApp
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, '_blank');
         });
     </script>
 
