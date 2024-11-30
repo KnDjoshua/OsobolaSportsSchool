@@ -123,7 +123,7 @@
                                 <div class="text-center">
                                     <h4 class="text-primary text-uppercase fw-bold mb-4"></h4>
                                     <h1 class="display-4 text-uppercase text-white mb-4">Osobola Sports School LTD</h1>
-                                    <p class="mb-4">Your future destination for top-notch sports training and
+                                    <!-- <p class="mb-4">Your future destination for top-notch sports training and
                                         academic excellence! <br> While our state-of-the-art facility is opening soon,
                                         we invite you to explore our upcoming programs in <br> soccer, netball,
                                         basketball,
@@ -132,87 +132,67 @@
                                         and get ready to embark on an incredible journey towards <br> becoming a
                                         champion,
                                         both in sports and in life. Join us as we pave the way for future stars!
-                                    </p>
+                                    </p> -->
 
 
-<p2 id="typer">
-    Sports 1
-</p2>
-<script>
-    document.addEventListener('DOMContentLoaded',function(event){
-  // array with texts to type in typewriter
-  var dataText = [ "Your future destination for top-notch sports training and academic excellence", "While our state-of-the-art facility is opening soon, we invite you to explore our upcoming programs", "soccer, netball, basketball,volleyball, tennis, boxing, and swimming....", "Stay connected for the latest updates and get ready to embark on an incredible journey towards "];
-  
-  // type one text in the typwriter
-  // keeps calling itself until the text is finished
-  function typeWriter(text, i, fnCallback) {
-    // chekc if text isn't finished yet
-    if (i < (text.length)) {
-      // add next character to h1
-     document.querySelector("typer").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
-
-      // wait for a while and call this function again for next character
-      setTimeout(function() {
-        typeWriter(text, i + 1, fnCallback)
-      }, 100);
-    }
-    // text finished, call callback if there is a callback function
-    else if (typeof fnCallback == 'function') {
-      // call callback after timeout
-      setTimeout(fnCallback, 700);
-    }
-  }
-  // start a typewriter animation for a text in the dataText array
-   function StartTextAnimation(i) {
-     if (typeof dataText[i] == 'undefined'){
-        setTimeout(function() {
-          StartTextAnimation(0);
-        }, 20000);
-     }
-     // check if dataText[i] exists
-    if (i < dataText[i].length) {
-      // text exists! start typewriter animation
-     typeWriter(dataText[i], 0, function(){
-       // after callback (and whole text has been animated), start next text
-       StartTextAnimation(i + 1);
-     });
-    }
-  }
-  // start the text animation
-  StartTextAnimation(0);
-});
-
-</script>
-
-
+<div class="input-wrapper">
+  <input aria-label="Ask us anything">
+  <span class="placeholder"></span>
+</div>
 
 <style>
-    
     body {
-/*  background-color: #120439;*/
-  height: 100%;
-  font-family: 'tradegothiclt-bold', sans-serif;
-}
-/*
-h1 {
-  font-size: 5em;
-  color: white;
-  text-transform: uppercase;
-}*/
-
-span {
-  border-right: .05em solid;
-  animation: caret 1s steps(1) infinite;
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  width: 100%;
 }
 
-@keyframes caret {
-  50% {
-    border-color: transparent;
+.input-wrapper {
+  display: block;
+  font-family: monospace;
+  font-size: 125%;
+  width: 50%;
+  > input,
+  > .placeholder {
+    display: block;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+  }
+  > .placeholder {
+    pointer-events: none;
+    @include typed(
+      "Your future destination for top-notch sports training and
+                                        academic excellence!",
+      "While our state-of-the-art facility is opening soon,
+                                        we invite you to explore our upcoming programs...",
+      "occer, netball,
+                                        basketball,
+                                        volleyball, tennis, boxing, and swimming.",
+                                        "Stay connected for the latest
+                                        updates
+                                        and get ready to embark on an incredible journey towards <br> becoming a
+                                        champion",
+      1.5,
+      (
+        caret-width: 2px,
+        caret-space: 2px
+      )
+    );
+  }
+  > input {
+    &:focus,
+    &:active {
+      + .placeholder {
+        display: none;
+      }
+    }
   }
 }
 </style>
-
-
 
 
 
@@ -424,7 +404,7 @@ span {
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="service-img">
-                                        <img src="img/service-1.jpg" class="img-fluid rounded-top w-100" alt="Image 1">
+                                        <img src="img/sports/Screenshot 2024-11-26 181803.png" class="img-fluid rounded-top w-100" alt="Image 1">
                                     </div>
                                 </div>
                                 <div class="carousel-item">
@@ -434,7 +414,7 @@ span {
                                 </div>
                                 <div class="carousel-item">
                                     <div class="service-img">
-                                        <img src="img/service-1.jpg" class="img-fluid rounded-top w-100" alt="Image 3">
+                                        <img src="img/sports/Screenshot 2024-11-26 181703.png" class="img-fluid rounded-top w-100" alt="Image 3">
                                     </div>
                                 </div>
                             </div>
