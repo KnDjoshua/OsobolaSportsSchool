@@ -20,7 +20,9 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
-
+p1, p2, p3, h1,h2,h3{
+     font-family: "Parkinsans", sans-serif;
+}
 .text-box-container {
     position: fixed;
     left: 10px;
