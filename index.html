@@ -123,7 +123,7 @@
                                 <div class="text-center">
                                     <h4 class="text-primary text-uppercase fw-bold mb-4"></h4>
                                     <h1 class="display-4 text-uppercase text-white mb-4">Osobola Sports School LTD</h1>
-                                    <p class="mb-4 typewriter">Your future destination for top-notch sports training and
+                                    <p class="mb-4">Your future destination for top-notch sports training and
                                         academic excellence! <br> While our state-of-the-art facility is opening soon,
                                         we invite you to explore our upcoming programs in <br> soccer, netball,
                                         basketball,
@@ -136,56 +136,82 @@
 
 
 
-
+<h1>
+  <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, Im Si.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
+    <span class="wrap"></span>
+  </a>
+</h1>
 
 <style>
-    /* General Styling */
-.mb-4 {
-    margin-bottom: 1.5rem; /* Adds margin at the bottom */
-    line-height: 1.6; /* Increases line height for better readability */
-    font-size: 1.2rem; /* Adjusts font size for better visibility */
-    color: #333; /* Sets the text color */
+    body {
+  background-color:#ce3635;
+  text-align: center;
+  color:#fff;
+  padding-top:10em;
 }
 
-/* Add a typewriter effect */
-.typewriter {
-    overflow: hidden; /* Ensures that text doesn't overflow during animation */
-    white-space: nowrap; /* Keeps the text in a single line */
-    width: 0; /* Start with zero width */
-    animation: typing 6s steps(70) 1s forwards, blink 0.75s step-end infinite;
-}
-
-/* Keyframes for typewriter effect */
-@keyframes typing {
-    to {
-        width: 100%; /* Animates the text to reveal it fully */
-    }
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent; /* Makes the cursor disappear every half second */
-    }
-}
-
-/* Optional: Adding a background color and padding */
-.mb-4::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 5px;
-    background-color: #3498db; /* Adds a blue bar above the paragraph */
-    margin-bottom: 1rem;
-}
-
-/* Optional: Make the text responsive */
-@media (max-width: 768px) {
-    .mb-4 {
-        font-size: 1rem; /* Decrease font size for smaller screens */
-    }
-}
-
+* { color:#fff; text-decoration: none;}
 </style>
+
+<script>
+    var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };</script>
+
+
 
 
 
