@@ -21,7 +21,7 @@ body {
     align-items: flex-start;
 }
 p1, p2, p3, h1,h2,h3{
-     font-family: "Parkinsans", sans-serif;
+     font-family: "Parkinsans", sans-serif !important;
 }
 .text-box-container {
     position: fixed;
