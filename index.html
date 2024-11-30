@@ -1189,15 +1189,16 @@
 
 
     <style>
-        /* Floating Chat Box */
+/* Floating Chat Box */
 .floating-chat {
     position: fixed;
     bottom: 20px;
-    left: 20px;
+    right: 20px;
     z-index: 1000;
-    display: flex;
+    display: none; /* Initially hidden */
     flex-direction: column;
     align-items: center;
+    transition: opacity 0.3s ease-in-out;
 }
 
 #whatsapp-icon {
@@ -1238,10 +1239,28 @@
 #send-button:hover {
     background-color: #128c7e;
 }
+
+/* Class to show the floating chat box */
+.show-chat {
+    display: flex; /* Show the chat box when this class is added */
+    opacity: 1; /* Fully visible */
+}
+
 </style>
 
 <script>
-    // Toggle the visibility of the chat box when the WhatsApp icon is clicked
+   // Detect scroll and show chat box when user scrolls down past a certain point
+window.addEventListener('scroll', function() {
+    const chatBox = document.getElementById("whatsapp-chat");
+
+    if (window.scrollY > 100) {  // Show chat box after scrolling down 100px
+        chatBox.classList.add("show-chat");
+    } else {
+        chatBox.classList.remove("show-chat");
+    }
+});
+
+// Toggle the visibility of the chat box when the WhatsApp icon is clicked
 const whatsappIcon = document.getElementById("whatsapp-icon");
 const chatBox = document.getElementById("chat-box");
 
@@ -1259,7 +1278,7 @@ sendButton.addEventListener("click", function() {
     if (message) {
         // Encode the message for the URL
         const encodedMessage = encodeURIComponent(message);
-        const phoneNumber = "+25670055953"; // Replace with the actual phone number
+        const phoneNumber = "1234567890"; // Replace with the actual phone number
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
         
         // Open WhatsApp chat with the message
@@ -1272,6 +1291,7 @@ sendButton.addEventListener("click", function() {
         chatBox.style.display = "none";
     }
 });
+
 </script>
 
     <!-- <script>
