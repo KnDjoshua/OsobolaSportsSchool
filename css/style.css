@@ -4,10 +4,10 @@
     background-image: url(./carousel-2.jpg);
     background-attachment: fixed;
 } */
-
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Parkinsans", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
