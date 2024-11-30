@@ -5,7 +5,12 @@
     background-attachment: fixed;
 } */
 @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
-
+.parkinsans-<uniquifier> {
+  font-family: "Parkinsans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
 body {
     font-family: "Parkinsans", sans-serif;
     margin: 0;
