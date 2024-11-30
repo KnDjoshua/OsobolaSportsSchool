@@ -1166,13 +1166,13 @@
 
 
 
-    <div class="text-box-container">
+   <!--  <div class="text-box-container">
         <textarea id="messageBox" placeholder="Type your message..."></textarea>
         <button id="sendButton">Send</button>
     </div>
     <div class="conversation">
-        <!-- Conversation messages will appear here -->
-    </div>
+    Conversation messages will appear here
+    </div> -->
 
 
 
@@ -1193,7 +1193,7 @@
 .floating-chat {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    left: 20px;
     z-index: 1000;
     display: flex;
     flex-direction: column;
@@ -1259,7 +1259,7 @@ sendButton.addEventListener("click", function() {
     if (message) {
         // Encode the message for the URL
         const encodedMessage = encodeURIComponent(message);
-        const phoneNumber = "1234567890"; // Replace with the actual phone number
+        const phoneNumber = "+265760447637"; // Replace with the actual phone number
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
         
         // Open WhatsApp chat with the message
