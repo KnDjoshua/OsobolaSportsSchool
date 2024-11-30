@@ -123,7 +123,7 @@
                                 <div class="text-center">
                                     <h4 class="text-primary text-uppercase fw-bold mb-4"></h4>
                                     <h1 class="display-4 text-uppercase text-white mb-4">Osobola Sports School LTD</h1>
-                                    <!-- <p class="mb-4">Your future destination for top-notch sports training and
+                                    <p class="mb-4 typewriter">Your future destination for top-notch sports training and
                                         academic excellence! <br> While our state-of-the-art facility is opening soon,
                                         we invite you to explore our upcoming programs in <br> soccer, netball,
                                         basketball,
@@ -132,67 +132,61 @@
                                         and get ready to embark on an incredible journey towards <br> becoming a
                                         champion,
                                         both in sports and in life. Join us as we pave the way for future stars!
-                                    </p> -->
+                                    </p> 
 
 
-<div class="input-wrapper">
-  <input aria-label="Ask us anything">
-  <span class="placeholder"></span>
-</div>
+
+
 
 <style>
- /*   body {
-  display: grid;
-  height: 100vh;
-  place-items: center;
-  width: 100%;
-}*/
-
-.input-wrapper {
-  display: block;
-  font-family: monospace;
-  font-size: 125%;
-  width: 50%;
-  > input,
-  > .placeholder {
-    display: block;
-    appearance: none;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    border: none;
-  }
-  > .placeholder {
-    pointer-events: none;
-    @include typed(
-      "Your future destination for top-notch sports training and
-                                        academic excellence!",
-      "While our state-of-the-art facility is opening soon,
-                                        we invite you to explore our upcoming programs...",
-      "occer, netball,
-                                        basketball,
-                                        volleyball, tennis, boxing, and swimming.",
-                                        "Stay connected for the latest
-                                        updates
-                                        and get ready to embark on an incredible journey towards <br> becoming a
-                                        champion",
-      1.5,
-      (
-        caret-width: 2px,
-        caret-space: 2px
-      )
-    );
-  }
-  > input {
-    &:focus,
-    &:active {
-      + .placeholder {
-        display: none;
-      }
-    }
-  }
+    /* General Styling */
+.mb-4 {
+    margin-bottom: 1.5rem; /* Adds margin at the bottom */
+    line-height: 1.6; /* Increases line height for better readability */
+    font-size: 1.2rem; /* Adjusts font size for better visibility */
+    color: #333; /* Sets the text color */
 }
+
+/* Add a typewriter effect */
+.typewriter {
+    overflow: hidden; /* Ensures that text doesn't overflow during animation */
+    white-space: nowrap; /* Keeps the text in a single line */
+    width: 0; /* Start with zero width */
+    animation: typing 6s steps(70) 1s forwards, blink 0.75s step-end infinite;
+}
+
+/* Keyframes for typewriter effect */
+@keyframes typing {
+    to {
+        width: 100%; /* Animates the text to reveal it fully */
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent; /* Makes the cursor disappear every half second */
+    }
+}
+
+/* Optional: Adding a background color and padding */
+.mb-4::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #3498db; /* Adds a blue bar above the paragraph */
+    margin-bottom: 1rem;
+}
+
+/* Optional: Make the text responsive */
+@media (max-width: 768px) {
+    .mb-4 {
+        font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+}
+
 </style>
+
 
 
 
